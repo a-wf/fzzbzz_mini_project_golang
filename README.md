@@ -1,5 +1,5 @@
 
-  
+  (Sorry for the git commits history... I worked on this project without remote backup...)
   
 
 This mini project has only one goal that to present some parts of my knowledge about Nodejs.
