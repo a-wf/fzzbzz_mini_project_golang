@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  description: Customizable "fizz-buzz" message server
+  version: 1.0.0
+  title: The fizz-buzz REST server
+  contact:
+    email: alex.w.fan16@gmail.com
+tags:
+  - name: fizz-buzz
+    description: Learn to count in fizz-buzz language
+  - name: monitor
+    description: service metrics monitoring 
+paths:
+  /fizzbuzz:
+    get:
+      tags:
+        - fizz-buzz
+      summary: an unique endpoint for all...
+      description: ""
+      parameters:
+        - name: int1
+          in: query
+          description: Status values that need to be considered for filter
+          required: true
+          schema:
+            type: integer
+        - name: int2
+          in: query
+          description: Status values that need to be considered for filter
+          required: true
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Status values that need to be considered for filter
+          required: true
+          schema:
+            type: integer
+        - name: str1
+          in: query
+          description: Status values that need to be considered for filter
+          required: true
+          schema:
+            type: string
+        - name: str2
+          in: query
+          description: Status values that need to be considered for filter
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful
+          content:
+            "application/json":
+              schema:
+                $ref: "#/components/schemas/Answer"
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Error
+servers:
+  - url: https://localhost/v1
+  - url: http://localhost/v1
+components:
+  schemas:
+    Answer:
+      type: object
+      properties:
+        answer:
+          type: string
+      example:
+        answer: 1,2,fizz,4,buzz,fizz,7,8,fizz,buzz,11,fizz,13,14,fizzbuzz,16,...

@@ -1,0 +1,14 @@
+[server]
+protocol = "http"  # server protocol, http or https
+port = 8443
+
+  [server.ssl] # private key and certificate
+  key = "SERVICE_PRIVATE_KEY"
+  certificate = "SERVICE_CERTIFICATE"
+
+[log]
+
+  [log.file]  # path: log files location, name: file name
+  path = "./log/"
+  name = "fizzbuzzTrace"
+  
